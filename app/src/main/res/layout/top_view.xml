@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content">
+
+    <!--<ImageView-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:src="@mipmap/top_background"/>-->
+
+    <!--<ImageView-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_gravity="right|bottom"-->
+        <!--android:src="@mipmap/monkey"/>-->
+    <LinearLayout
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:background="@color/colorAccent"
+        >
+    <LinearLayout
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:padding="25dp"
+        android:gravity="center"
+        android:background="@color/colorAccent"
+        >
+        <!--<ImageView-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:src="@mipmap/ic_event"/>-->
+        <TextView
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:text="今日入库 ："
+            android:textSize="25sp"
+            android:textStyle="bold"
+            android:textColor="@color/white"
+            />
+        <TextView
+            android:id="@+id/tv_main_data_rk"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:text="264"
+            android:textSize="25sp"
+            android:textStyle="bold"
+            android:textColor="@color/white"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:text="今日出库 ："
+            android:textColor="@color/white"
+            android:textSize="25sp"
+            android:textStyle="bold" />
+        <TextView
+            android:id="@+id/tv_main_data_ck"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:text="122"
+            android:textSize="25sp"
+            android:textStyle="bold"
+            android:textColor="@color/white"
+            />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:padding="25dp"
+        android:gravity="center"
+        android:background="@color/colorAccent"
+        >
+        <!--<ImageView-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:src="@mipmap/ic_event"/>-->
+        <TextView
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:text="今日盘点 ："
+            android:textSize="25sp"
+            android:textStyle="bold"
+            android:textColor="@color/white"
+            />
+        <TextView
+            android:id="@+id/tv_main_data_pd"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:text="16"
+            android:textSize="25sp"
+            android:textStyle="bold"
+            android:textColor="@color/white"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:text="历史未完成 ："
+            android:textColor="@color/white"
+            android:textSize="25sp"
+            android:textStyle="bold" />
+        <TextView
+            android:id="@+id/tv_main_data_wwc"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:text="7"
+            android:textSize="25sp"
+            android:textStyle="bold"
+            android:textColor="@color/white"
+            />
+    </LinearLayout>
+    </LinearLayout>
+</FrameLayout>

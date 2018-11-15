@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_one"
+            android:icon="@drawable/ic_menu_one"
+            android:title="供应商管理"
+            />
+        <!--<item-->
+        <!--android:id="@+id/nav_two"-->
+        <!--android:icon="@drawable/ic_menu_two"-->
+        <!--android:title="客户管理" />-->
+        <!--<item-->
+        <!--android:id="@+id/nav_three"-->
+        <!--android:icon="@drawable/ic_menu_three"-->
+        <!--android:title="库存管理" />-->
+        <item
+            android:id="@+id/nav_two"
+            android:icon="@drawable/ic_menu_three"
+            android:title="入库报表" />
+        <item
+            android:id="@+id/nav_three"
+            android:icon="@drawable/ic_menu_three"
+            android:title="出库报表" />
+
+    </group>
+
+    <item android:title="系统">
+        <menu>
+            <item
+                android:id="@+id/nav_four"
+                android:icon="@drawable/ic_menu_four"
+                android:title="设置" />
+            <item
+                android:id="@+id/nav_five"
+                android:icon="@drawable/ic_menu_five"
+                android:title="使用说明" />
+
+            <item
+                android:id="@+id/nav_six"
+                android:icon="@drawable/ic_menu_six"
+                android:title="关于我们" />
+            <!--<item-->
+            <!--android:id="@+id/nav_seven"-->
+            <!--android:icon="@drawable/ic_menu_seven"-->
+            <!--android:title="意见反馈" />-->
+            <item
+                android:id="@+id/nav_eight"
+                android:icon="@drawable/ic_menu_eight"
+                android:title="退出" />
+        </menu>
+    </item>
+
+</menu>
+    <!--21、Menu-->
+    <!--<menu> 根节点，没有属性。-->
+
+    <!--<group> 表示在它里面的<item>在同一group。相关属性包括：-->
+    <!--id：group id-->
+    <!--menuCategory：对应 常量Menu CATEGORY_*  — 定义了一组的优先权，有效值：container，system，secondary，和alternative-->
+    <!--orderInCategory：定义这组菜单在菜单中的默认次序，int值-->
+    <!--checkableBehavior：这组菜单项是否checkable。有效值：none，all(单选/单选按钮radio button)，single(非单选/复选类型checkboxes)-->
+    <!--visible：这组菜单是否可见 true or false-->
+    <!--enabled：这组菜单是否可用，true or false-->
+    <!--<item>  菜单项，可以嵌入<menu>作为子菜单。相关属性包括：-->
+    <!--id：  item id-->
+    <!--menuCategory： 用来定义menu类别-->
+    <!--orderInCategory： 用来定义次序，与一个组在一起(Used to define the order of the item, within a group)-->
+    <!--title： 标题-->
+    <!--titleCondensed：标题摘要， 当原标题太长的时候，需要用简短的字符串来代替title-->
+    <!--icon： icon 图标-->
+    <!--alphabeticShortcut： 字母快捷键-->
+    <!--numericShortcut：数学快捷键-->
+    <!--checkable：是否为checkbox， true or false-->
+    <!--checked：是否设置为checked状态，true or false-->
+    <!--visible： 是否可见， true or false-->
+    <!--enabled：是否可用，true or false-->

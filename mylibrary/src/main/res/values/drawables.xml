@@ -1,0 +1,16 @@
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+    <!--<item name="ic_menu_camera" type="drawable">@android:drawable/ic_menu_camera</item>-->
+    <!--<item name="ic_menu_gallery" type="drawable">@android:drawable/ic_menu_gallery</item>-->
+    <!--<item name="ic_menu_slideshow" type="drawable">@android:drawable/ic_menu_slideshow</item>-->
+    <!--<item name="ic_menu_manage" type="drawable">@android:drawable/ic_menu_manage</item>-->
+    <!--<item name="ic_menu_share" type="drawable">@android:drawable/ic_menu_share</item>-->
+    <!--<item name="ic_menu_send" type="drawable">@android:drawable/ic_menu_send</item>-->
+    <item name="ic_menu_one" type="drawable">@drawable/ic_yd_green</item>
+    <item name="ic_menu_two" type="drawable">@drawable/ic_yd_red</item>
+    <item name="ic_menu_three" type="drawable">@drawable/ic_yd_violet</item>
+    <item name="ic_menu_four" type="drawable">@drawable/ic_yd_yellow</item>
+    <item name="ic_menu_five" type="drawable">@drawable/ic_yd_blue</item>
+    <item name="ic_menu_six" type="drawable">@drawable/ic_yd_gray</item>
+    <item name="ic_menu_seven" type="drawable">@drawable/ic_yd_purple</item>
+    <item name="ic_menu_eight" type="drawable">@drawable/ic_yd_black</item>
+</resources>

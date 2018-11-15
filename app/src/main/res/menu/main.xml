@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/action_search"
+        android:icon="@android:drawable/ic_menu_search"
+        android:title="搜索 商品/订单"
+        app:actionViewClass="android.support.v7.widget.SearchView"
+        app:showAsAction="always" />
+    <!--Ddd showAsAction 属性共五个值：-->
+    <!--ifRoom 会显现item，但是如果有4个或以上会隐藏在溢出列表中 ，但是并不局限于4个，可以根据的宽窄never永远不会显示-->
+    <!--Always 无论是否溢出，总会显示-->
+    <!--Never 从不显示-->
+    <!--withText示意actionbar 要显示文本标题，actionbar会尽可能显示标题，但是如果空间有限，文本标题可能显示不全-->
+    <!--CollapseActionView 声明这个操作视窗应该被折叠一个按钮中，当用户选择这个按钮时，这个操作视窗展开，否则，这个操作视窗在默认的情况下是可见的，并且即使在用于不适用的时候，也要占据有效空间-->
+    <!--一般要配合ifRoom使用-->
+
+
+    <item
+        android:id="@+id/action_settings"
+        android:orderInCategory="100"
+        android:title="@string/action_settings"
+        app:showAsAction="never" />
+</menu>

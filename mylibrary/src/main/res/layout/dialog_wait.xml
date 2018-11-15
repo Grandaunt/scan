@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:gravity="center_horizontal">
+
+    <!--<LinearLayout-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_centerInParent="true"-->
+        <!--android:gravity="center"-->
+        <!--android:orientation="vertical">-->
+
+        <!--<ProgressBar-->
+            <!--android:layout_width="@dimen/layout_size100"-->
+            <!--android:layout_height="@dimen/layout_size100"-->
+            <!--android:indeterminate="false"-->
+            <!--android:indeterminateDrawable="@drawable/wait_progress" />-->
+
+        <!--<TextView-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_marginTop="@dimen/layout_size20"-->
+            <!--android:text="等待中..."-->
+            <!--android:textColor="#000"-->
+            <!--android:textSize="@dimen/text_size16" />-->
+    <!--</LinearLayout>-->
+
+        <LinearLayout
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:background="@drawable/dialog_wait"
+            android:gravity="center_horizontal"
+
+            android:orientation="vertical">
+            <com.wang.avi.AVLoadingIndicatorView
+                android:id="@+id/loadingview"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                app:indicatorName="LineSpinFadeLoaderIndicator"
+                app:indicatorColor="#afff"
+                android:layout_marginTop="20dp"/>
+            <TextView
+                android:id="@+id/tv_loading"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="加载中..."
+                android:textSize="12sp"
+                android:textColor="@color/white"
+                android:layout_marginTop="7dp"/>
+        </LinearLayout>
+
+
+
+</LinearLayout>

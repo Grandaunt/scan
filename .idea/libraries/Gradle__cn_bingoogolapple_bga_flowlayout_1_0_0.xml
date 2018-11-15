@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="Gradle: cn.bingoogolapple:bga-flowlayout-1.0.0">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/bga-flowlayout-1.0.0.aar/2c791b7a60e75fb7a700d228810b5ee9/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/bga-flowlayout-1.0.0.aar/2c791b7a60e75fb7a700d228810b5ee9/res" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/cn.bingoogolapple/bga-flowlayout/1.0.0/9551ecd8ef975860c9d01c566b6031c926563ea0/bga-flowlayout-1.0.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/normal_black"
+    android:orientation="vertical"
+    android:weightSum="1">
+
+    <LinearLayout
+        android:id="@+id/root"
+        android:layout_width="match_parent"
+        android:layout_height="337dp"
+        android:orientation="vertical">
+
+    </LinearLayout>
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/layout_size20"
+            android:background="@color/Theme_color"
+            android:gravity="center"
+
+            android:text="城市"
+            android:textSize="@dimen/layout_size20" />
+
+        <TextView
+            android:id="@+id/textView1"
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/layout_size20"
+            android:background="@color/Theme_color"
+            android:gravity="center"
+            android:text="日期"
+            android:textSize="@dimen/layout_size20" />
+
+
+        <CheckBox
+            android:id="@+id/checkbox_receive"
+            style="@style/MyCheckBox_right"
+            android:layout_width="132dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center"
+            android:layout_weight="0.04"
+            android:background="@null"
+            android:checked="true"
+            android:paddingRight="15dp" />
+
+
+</LinearLayout>
