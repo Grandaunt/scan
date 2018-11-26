@@ -145,10 +145,10 @@ public class MyApplication extends Application {
 
         return String.valueOf(getUserLoginMainEntity().getMobile());
     }
-//    public String getUserName() {
-//        //真实姓名
-//        return String.valueOf(getUserLoginMainEntity().getUserLogin().getUserBaseInfo().getTrueName());
-//    }
+    public String getUserName() {
+        //真实姓名
+        return String.valueOf(getUserLoginMainEntity().getUserName());
+    }
 
     //Activity相关
     public void addActivity(Activity activity) {

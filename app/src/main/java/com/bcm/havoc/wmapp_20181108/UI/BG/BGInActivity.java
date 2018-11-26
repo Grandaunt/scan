@@ -20,6 +20,7 @@ import com.baidu.tts.client.TtsMode;
 import com.bcm.havoc.mylibrary.Utils.JsonUtils;
 import com.bcm.havoc.mylibrary.Utils.ToastUtils;
 import com.bcm.havoc.mylibrary.Utils.logger.Logger;
+import com.bcm.havoc.wmapp_20181108.AppConfig;
 import com.bcm.havoc.wmapp_20181108.Entity.OrderPack;
 import com.bcm.havoc.wmapp_20181108.Entity.pageResults;
 import com.bcm.havoc.wmapp_20181108.MyApplication;
@@ -71,15 +72,6 @@ public class BGInActivity extends TTSBaseActivity implements EasyPermissions.Per
     private OrderPack orderPack;
     private MyApplication application;
     // ================== 初始化参数设置开始 ==========================
-    /**
-     * 发布时请替换成自己申请的appId appKey 和 secretKey。注意如果需要离线合成功能,请在您申请的应用中填写包名。
-     * 本demo的包名是com.baidu.tts.sample，定义在build.gradle中。
-     */
-    protected String appId = "14770428";
-
-    protected String appKey = "5PfgrceECDCUcf71zjxhY0MG";
-
-    protected String secretKey = "qo9AePqbGCuOR5FLpAYKNi1V6MDP8vBX";
 
     // TtsMode.MIX; 离在线融合，在线优先； TtsMode.ONLINE 纯在线； 没有纯离线
     protected TtsMode ttsMode = TtsMode.MIX;
@@ -183,8 +175,7 @@ public class BGInActivity extends TTSBaseActivity implements EasyPermissions.Per
             ToastUtils.showLongToastSafe("无订单编号");
             return;
         }
-        RequestParams params = new RequestParams("http://www.kzs1.cn/storage/interface/enterStorage");
-//        RequestParams params = new RequestParams("http://172.16.10.242:8080/storage/interface/enterStorage");
+        RequestParams params = new RequestParams(AppConfig.URL_COURIER_IN);
 //        http://www.kzs1.cn/storage/interface/enterStorage?expressNumber=73105090565685&status=1&upDown=2
 //        Gson gson =new Gson();
 //        String RequestStr = gson.toJson(orderPack);
@@ -254,7 +245,7 @@ public class BGInActivity extends TTSBaseActivity implements EasyPermissions.Per
 
 
         // appId appKey secretKey 网站上您申请的应用获取。注意使用离线合成功能的话，需要应用中填写您app的包名。包名在build.gradle中获取。
-        InitConfig initConfig = new InitConfig(appId, appKey, secretKey, ttsMode, params, listener);
+        InitConfig initConfig = new InitConfig(AppConfig.appId, AppConfig.appKey, AppConfig.secretKey, ttsMode, params, listener);
 
         // 如果您集成中出错，请将下面一段代码放在和demo中相同的位置，并复制InitConfig 和 AutoCheck到您的项目中
         // 上线时请删除AutoCheck的调用
@@ -287,7 +278,7 @@ public class BGInActivity extends TTSBaseActivity implements EasyPermissions.Per
         // 设置在线发声音人： 0 普通女声（默认） 1 普通男声 2 特别男声 3 情感男声<度逍遥> 4 情感儿童声<度丫丫>
         params.put(SpeechSynthesizer.PARAM_SPEAKER, "1");
         // 设置合成的音量，0-9 ，默认 5
-        params.put(SpeechSynthesizer.PARAM_VOLUME, "9");
+        params.put(SpeechSynthesizer.PARAM_VOLUME, "15");
         // 设置合成的语速，0-9 ，默认 5
         params.put(SpeechSynthesizer.PARAM_SPEED, "5");
         // 设置合成的语调，0-9 ，默认 5

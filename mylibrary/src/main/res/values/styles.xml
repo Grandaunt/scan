@@ -57,6 +57,8 @@
 
     <style name="dialog" parent="@android:style/Theme.Dialog">
         <item name="android:windowTitleStyle">@style/PauseDialogTitle</item>
+        <item name="android:paddingRight">8dp</item>
+        <item name="android:paddingLeft">8dp</item>
         <item name="android:windowBackground">@drawable/actionsheet_single_selector</item>
         <item name="android:windowContentOverlay">@null</item>
         <!-- 浮于Activity之上 -->
@@ -72,7 +74,7 @@
         <item name="android:windowIsTranslucent">false</item>
         <!-- Dialog进入及退出动画 -->
         <item name="android:windowAnimationStyle">@style/ActionSheetDialogAnimation</item>
-        <item name="android:textSize">@dimen/sp_26</item>
+        <item name="android:textSize">@dimen/sp_20</item>
         <item name="android:textColor">@color/dull_blue</item>
         <!--<item name="android:windowFrame">@null</item>  //Dialog的windowFrame框为无-->
         <!--<item name="android:windowIsFloating">true</item>  //是否浮现在activity之上-->

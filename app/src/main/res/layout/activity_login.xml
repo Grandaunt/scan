@@ -5,9 +5,9 @@
     android:id="@+id/activity_login"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="25dp"
-    android:background="@mipmap/im_loginbg"
-    tools:context=".ui.LoginActivity"
+    android:padding="40dp"
+    android:background="@color/colorAccent"
+    tools:context=".UI.LoginActivity"
     android:orientation="vertical">
 
     <LinearLayout
@@ -17,82 +17,39 @@
         android:orientation="vertical">
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="50dp"
+            android:layout_height="wrap_content"
             android:gravity="center"
-            android:orientation="horizontal"
+            android:orientation="vertical"
            >
-        <ImageView
-        android:layout_height="match_parent"
-        android:layout_width="50dp"
-        android:src="@mipmap/ic_com_logo"/>
+        <!--<ImageView-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:layout_width="50dp"-->
+        <!--android:src="@mipmap/ic_com_logo"/>-->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="透明云"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:textSize="26dp" />
         <TextView
             android:layout_width="wrap_content"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="电商仓库ERP"
-            android:textColor="@color/black"
+            android:text="物流管理系统"
+            android:textColor="@color/white"
             android:textStyle="bold"
-            android:layout_marginLeft="20dp"
-            android:textSize="20dp" />
+            android:textSize="22dp" />
         </LinearLayout>
-
-        <!--<LinearLayout-->
-            <!--android:layout_width="match_parent"-->
-            <!--android:layout_height="50dp"-->
-            <!--android:layout_marginTop="25dp"-->
-            <!--android:padding="@dimen/activity_horizontal_margin"-->
-            <!--android:orientation="horizontal"-->
-            <!--android:background="@mipmap/bg_et_login">-->
-
-            <!--<ImageView-->
-                <!--android:layout_width="20dp"-->
-                <!--android:layout_height="20dp"-->
-                <!--android:layout_marginLeft="10dp"-->
-                <!--android:src="@mipmap/ic_account" />-->
-
-            <!--<Spinner-->
-                <!--android:id="@+id/et_serurl"-->
-                <!--android:layout_width="match_parent"-->
-                <!--android:layout_height="match_parent"-->
-                <!--android:paddingLeft="8dp"-->
-                <!--android:textSize="@dimen/sp_28"-->
-                <!--android:textColor="@color/white"-->
-                <!--android:textColorHint="@color/white2"-->
-                <!--android:theme="@style/SpnStyle"/>-->
-        <!--</LinearLayout>-->
-        <!--<LinearLayout-->
-            <!--android:layout_width="match_parent"-->
-            <!--android:layout_height="50dp"-->
-            <!--android:layout_marginTop="0.5dp"-->
-            <!--android:padding="@dimen/activity_horizontal_margin"-->
-            <!--android:orientation="horizontal"-->
-            <!--android:background="@mipmap/bg_et_login">-->
-
-            <!--<ImageView-->
-                <!--android:layout_width="20dp"-->
-                <!--android:layout_height="20dp"-->
-                <!--android:layout_marginLeft="10dp"-->
-                <!--android:src="@mipmap/ic_comm" />-->
-
-            <!--<EditText-->
-                <!--android:id="@+id/et_comm"-->
-                <!--android:layout_width="match_parent"-->
-                <!--android:layout_height="match_parent"-->
-                <!--android:background="@null"-->
-                <!--android:hint="@string/Input_comm"-->
-                <!--android:paddingLeft="8dp"-->
-                <!--android:textSize="@dimen/sp_28"-->
-                <!--android:textColor="@color/white"-->
-                <!--android:textColorHint="@color/white2" />-->
-        <!--</LinearLayout>-->
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="70dp"
-            android:layout_marginTop="40dp"
-            android:padding="@dimen/activity_horizontal_margin"
+            android:layout_height="55dp"
+            android:layout_marginTop="50dp"
+            android:padding="4dp"
             android:orientation="horizontal"
-            android:background="@mipmap/bg_et_login">
+            android:background="@color/colorPrimary">
 
             <ImageView
                 android:layout_width="20dp"
@@ -108,18 +65,18 @@
                 android:background="@null"
                 android:hint="@string/Input_useracc"
                 android:paddingLeft="8dp"
-                android:textSize="@dimen/sp_38"
+                android:textSize="18dp"
                 android:textColor="@color/white"
                 android:textColorHint="@color/white2" />
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="70dp"
-            android:layout_marginTop="0.5dp"
-            android:padding="@dimen/activity_horizontal_margin"
+            android:layout_height="55dp"
+            android:layout_marginTop="15dp"
+            android:padding="4dp"
             android:orientation="horizontal"
-            android:background="@mipmap/bg_et_login">
+            android:background="@color/colorPrimary">
 
             <ImageView
                 android:layout_width="20dp"
@@ -136,7 +93,7 @@
                 android:hint="@string/Input_password"
                 android:paddingLeft="8dp"
                 android:inputType="textPassword"
-                android:textSize="@dimen/sp_38"
+                android:textSize="18dp"
                 android:textColor="@color/white"
                 android:textColorHint="@color/white2" />
         </LinearLayout>
@@ -144,13 +101,13 @@
 
         <Button
             android:id="@+id/btn_login"
-            android:background="@mipmap/bg_big_login"
+            android:background="@color/colorPrimaryDark"
             android:layout_width="match_parent"
-            android:layout_height="80dp"
+            android:layout_height="55dp"
             android:layout_marginTop="45dp"
             android:text="@string/login"
-            android:textSize="@dimen/sp_38"
-            android:textColor="@color/black"
+            android:textSize="22dp"
+            android:textColor="@color/white"
        />
     </LinearLayout>
 </LinearLayout>

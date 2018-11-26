@@ -1,14 +1,15 @@
 package com.bcm.havoc.mylibrary.UI.Activity;
 
-import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.LayoutRes;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
+import android.view.WindowManager;
 import android.widget.LinearLayout;
 
+import com.bcm.havoc.mylibrary.R;
 import com.bcm.havoc.mylibrary.UI.Widget.Title_toolbar;
 import com.githang.statusbar.StatusBarCompat;
 
@@ -22,7 +23,7 @@ public class TitleActivity extends DialogActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-       /*
+
         //沉浸式状态栏
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
             Window window = getWindow();
@@ -34,11 +35,11 @@ public class TitleActivity extends DialogActivity {
           //WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION,
           //WindowManager.LayoutParams.FLAG_LOCAL_FOCUS_MODE);
         }
-        */
+
         //去掉标题栏
         this.requestWindowFeature(Window.FEATURE_NO_TITLE);
         /*状态栏处理*/
-        StatusBarCompat.setStatusBarColor(this, Color.WHITE, true);
+        StatusBarCompat.setStatusBarColor(this, getResources().getColor(R.color.colorPrimaryDark), true);
 
         setContentView(set_Layout());
 

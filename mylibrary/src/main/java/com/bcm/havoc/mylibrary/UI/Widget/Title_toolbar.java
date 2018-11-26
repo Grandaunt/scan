@@ -102,9 +102,9 @@ public class Title_toolbar extends LinearLayout {
      * @return
      */
     public Title_toolbar setDarkTheme() {
-        titleName.setTextColor(Color.BLACK);
-        right_text.setTextColor(Color.BLACK);
-        this.getChildAt(0).setBackgroundColor(Color.WHITE);
+        titleName.setTextColor(Color.WHITE);
+        right_text.setTextColor(Color.WHITE);
+        this.getChildAt(0).setBackgroundColor(getResources().getColor(R.color.jh_blue));
         ((ImageView) ((ViewGroup) back).getChildAt(0)).setImageBitmap(BitmapFactory.decodeResource(getResources(), R.mipmap.left_d));
         return this;
     }

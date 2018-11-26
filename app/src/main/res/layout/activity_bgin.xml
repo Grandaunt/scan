@@ -7,13 +7,13 @@
     <cn.bingoogolapple.qrcode.zbar.ZBarView
         android:id="@+id/zbarview"
         android:layout_width="match_parent"
-        android:layout_height="240dp"
+        android:layout_height="220dp"
         app:qrcv_animTime="1000"
         app:qrcv_barCodeTipText="请扫描快递单号"
         app:qrcv_barcodeRectHeight="140dp"
         app:qrcv_borderColor="@android:color/white"
         app:qrcv_borderSize="1dp"
-        app:qrcv_cornerColor="@color/colorPrimaryDark"
+        app:qrcv_cornerColor="@color/jh_blue"
         app:qrcv_cornerLength="20dp"
         app:qrcv_cornerSize="3dp"
         app:qrcv_customGridScanLineDrawable="@mipmap/custom_grid_scan_line"
@@ -30,7 +30,7 @@
         app:qrcv_maskColor="#33FFFFFF"
         app:qrcv_qrCodeTipText="将二维码/条码放入框内，即可自动扫描"
         app:qrcv_rectWidth="300dp"
-        app:qrcv_scanLineColor="@color/colorPrimaryDark"
+        app:qrcv_scanLineColor="@color/jh_blue"
         app:qrcv_toolbarHeight="56dp"
         app:qrcv_topOffset="-20dp"
         app:qrcv_verticalBias="-1" />
@@ -38,39 +38,46 @@
         android:layout_height="match_parent"
         android:layout_width="match_parent"
         android:orientation="vertical"
-        android:padding="@dimen/nav_header_vertical_spacing"
-        android:layout_below="@+id/zbarview">
-    <LinearLayout
-        android:layout_height="wrap_content"
-        android:layout_width="match_parent"
-        android:orientation="horizontal">
-        <TextView
-            android:layout_height="wrap_content"
-            android:layout_width="wrap_content"
-            android:textSize="@dimen/small_text_size"
-            android:text="快递单号 : "/>
-        <EditText
-            android:id="@+id/et_kd_dh"
-            android:layout_height="match_parent"
-            android:layout_width="wrap_content"
-            android:layout_weight="1"
-            android:inputType="number|numberDecimal"
-            android:textSize="@dimen/small_text_size"
-            android:background="@null"
-            android:hint="请输入或扫描快递单号"/>
-         <!--<ImageButton-->
-             <!--android:id="@+id/imbtn_scan"-->
-             <!--android:layout_weight="1"-->
-             <!--android:layout_height="match_parent"-->
-             <!--android:layout_width="wrap_content"-->
-             <!--android:src="@mipmap/ic_scan"/>-->
-        <Button
-            android:id="@+id/imbtn_scan"
-            android:layout_height="wrap_content"
-            android:layout_width="wrap_content"
-            android:text="发送"
-          />
-    </LinearLayout>
+        android:layout_below="@+id/zbarview"
+
+        >
+        <LinearLayout
+            android:layout_height="65dp"
+            android:layout_width="match_parent"
+            android:background="@color/white"
+            android:gravity="center"
+            android:padding="@dimen/nav_header_vertical_spacing"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:textSize="@dimen/small_text_size"
+                android:text="快递单号 : "/>
+            <EditText
+                android:id="@+id/et_kd_dh"
+                android:layout_height="match_parent"
+                android:layout_width="wrap_content"
+                android:layout_weight="1"
+                android:inputType="number|numberDecimal"
+                android:textSize="@dimen/small_text_size"
+                android:background="@null"
+                android:hint="请输入或扫描快递单号"/>
+            <!--<ImageButton-->
+            <!--android:id="@+id/imbtn_scan"-->
+            <!--android:layout_weight="1"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:src="@mipmap/ic_scan"/>-->
+            <Button
+                android:id="@+id/imbtn_scan"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:background="@color/jh_blue"
+                android:textColor="@color/white"
+                android:textSize="@dimen/sp_20"
+                android:text="发送"
+                />
+        </LinearLayout>
         <View
             android:layout_height="1dp"
             android:layout_width="match_parent"
@@ -78,8 +85,11 @@
             android:background="@color/gray_e7e7e7"
             />
         <LinearLayout
-            android:layout_height="wrap_content"
+            android:layout_height="65dp"
             android:layout_width="match_parent"
+            android:background="@color/white"
+            android:gravity="center"
+            android:padding="@dimen/nav_header_vertical_spacing"
             android:orientation="horizontal">
             <TextView
                 android:layout_height="wrap_content"
@@ -99,13 +109,13 @@
             android:layout_height="1dp"
             android:layout_width="match_parent"
             android:background="@color/gray_e7e7e7"
-        />
+            />
         <TextView
             android:id="@+id/tv_scan_reslf"
             android:layout_height="wrap_content"
             android:layout_width="match_parent"
-            android:layout_marginTop="@dimen/activity_horizontal_margin"
-            android:textColor="@color/orange"
+            android:layout_marginTop="40dp"
+            android:textColor="@color/chocolate"
             android:layout_gravity="center"
             android:textStyle="bold"
             android:gravity="center"
@@ -114,7 +124,7 @@
             android:id="@+id/tv_scan_comp"
             android:layout_height="wrap_content"
             android:layout_width="match_parent"
-            android:textColor="@color/orange"
+            android:textColor="@color/chocolate"
             android:layout_gravity="center"
             android:gravity="center"
             android:textStyle="bold"

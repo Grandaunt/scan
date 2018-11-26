@@ -83,7 +83,7 @@
         android:windowSoftInputMode="adjustPan|stateHidden"
         tools:replace="icon,theme">
         <activity
-            android:name=".UI.BG.TTSActivity"
+            android:name=".UI.LoadingActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
@@ -92,64 +92,18 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <!-- <activity android:name=".ui.LoadingActivity" /> -->
+        <!--<activity android:name=".UI.LoadingActivity" /> -->
         <activity android:name=".UI.LoginActivity" />
-        <activity android:name=".UI.RK.RkListActivity" />
-        <activity android:name=".UI.CK.CkListActivity" />
-        <activity android:name=".UI.PD.PdListActivity" />
-        <activity android:name=".UI.GOODS.GoodsActivity" />
-        <activity android:name=".UI.GOODS.GTJActivity" />
-        <activity android:name=".UI.YK.YkListActivity" />
-        <activity android:name=".UI.RK.RkActivity" />
-        <activity android:name=".UI.CK.CkActivity" />
-        <activity android:name=".UI.Menu.AboutActivity" />
-        <activity android:name=".UI.PD.PdActivity" />
-        <!-- <activity android:name=".Base.ui.SeekbarActivity" /> -->
-        <!-- <activity -->
-        <!-- android:name=".ManagerTmActivity" -->
-        <!-- android:label="@string/title_activity_manager_tm" /> -->
-        <activity android:name=".UI.Menu.SettingActivity" />
-        <!-- <activity android:name=".UI.ProcurementPlanActivity" /> -->
-        <!-- <activity android:name=".UI.DeadStockActivity" /> -->
-        <activity android:name=".UI.Menu.ScanActivity" />
-        <activity android:name=".UI.Menu.SupplierActivity" />
-        <!-- <activity android:name=".UI.SearchResultActivity"></activity> -->
-        <!-- <activity -->
-        <!-- android:name=".ui.SearchResultActivity" -->
-        <!-- android:parentActivityName=".ui.MainActivity"> -->
-        <!-- <meta-data -->
-        <!-- android:name="android.support.PARENT_ACTIVITY" -->
-        <!-- android:value=".ui.MainActivity" /> -->
-        <!-- &lt;!&ndash; meta tag and intent filter go into results activity &ndash;&gt; -->
-        <!-- <meta-data -->
-        <!-- android:name="android.app.searchable" -->
-        <!-- android:resource="@xml/searchable" /> -->
 
+        <activity android:name=".UI.BG.BGInActivity" />
 
-        <!-- <intent-filter> -->
-        <!-- <action android:name="android.intent.action.SEARCH" /> -->
-        <!-- </intent-filter> -->
-        <!-- </activity> -->
+        <activity android:name=".UI.BG.BGOutActivity" />
 
-        <activity android:name=".UI.Express.ExpressActivity" />
-        <activity android:name=".UI.Menu.CustomerActivity" />
-        <activity android:name=".UI.Menu.InventoryActivity" />
-        <activity android:name=".UI.Menu.FeedbackActivity" />
-        <activity android:name=".UI.Menu.InstructionsActivity" />
-        <activity android:name=".UI.RK.RKGoodInfoActivity" />
-        <activity android:name=".UI.GOODS.ItemInfoActivity" />
-        <activity android:name=".UI.Menu.RKBBActivity" />
-        <activity android:name=".UI.Menu.CKBBActivity" />
-        <!-- <activity -->
-        <!-- android:name=".Base.UI.SettingsActivity" -->
-        <!-- android:label="@string/title_activity_settings" /> -->
-        <activity android:name=".UI.BG.BGInActivity"/>
-
-             <activity android:name=".UI.BG.BGOutActivity">
-
-        <!--<activity android:name=".UI.BG.TTSActivity">-->
+        <activity android:name=".UI.BG.TTSActivity">
 
         </activity>
+
     </application>
+
 
 </manifest>

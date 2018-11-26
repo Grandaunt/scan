@@ -3,6 +3,7 @@ package com.bcm.havoc.mylibrary.UI;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.view.Display;
 import android.view.WindowManager;
 import android.widget.ImageView;
@@ -12,6 +13,12 @@ import android.widget.TextView;
 import com.bcm.havoc.mylibrary.Application.AppManager;
 import com.bcm.havoc.mylibrary.Application.MyApplication;
 import com.bcm.havoc.mylibrary.UI.Activity.TitleActivity;
+import com.bcm.havoc.mylibrary.Utils.PermissionManager;
+
+import java.util.List;
+
+import pub.devrel.easypermissions.AppSettingsDialog;
+import pub.devrel.easypermissions.EasyPermissions;
 
 
 /**
@@ -23,7 +30,7 @@ import com.bcm.havoc.mylibrary.UI.Activity.TitleActivity;
  * 修改备注：
  */
 //     setHead_toolbar(true, "物料信息", false).setDarkTheme();
-public class BaseActivity extends TitleActivity {
+public class BaseActivity extends TitleActivity implements EasyPermissions.PermissionCallbacks{
     /**
      * 日志输出标志getSupportActionBar().
      **/
@@ -40,7 +47,8 @@ public class BaseActivity extends TitleActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
+        PermissionManager permissionManager = new PermissionManager();
+        permissionManager.checkBasePermission(this);
         //屏幕的尺寸
         WindowManager windowManager = getWindowManager();
         Display display = windowManager.getDefaultDisplay();
@@ -113,9 +121,52 @@ public class BaseActivity extends TitleActivity {
     public static int getWin_height() {
         return win_height;
     }
+    /**
+     * 重写onRequestPermissionsResult，用于接受请求结果
+     *
+     * @param requestCode
+     * @param permissions
+     * @param grantResults
+     */
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        //将请求结果传递EasyPermission库处理
+        EasyPermissions.onRequestPermissionsResult(requestCode, permissions, grantResults, this);
+    }
+    /**
+     * 请求权限成功
+     *
+     * @param requestCode
+     * @param perms
+     */
+    @Override
+    public void onPermissionsGranted(int requestCode, List<String> perms) {
+//        ToastUtils.showToast(getApplicationContext(), "用户授权成功");
 
+    }
+    /**
+     * 请求权限失败
+     *
+     * @param requestCode
+     * @param perms
+     */
+    @Override
+    public void onPermissionsDenied(int requestCode, List<String> perms) {
+//        ToastUtils.showToast(getApplicationContext(), "用户授权失败");
+        /**
+         * 若是在权限弹窗中，用户勾选了'NEVER ASK AGAIN.'或者'不在提示'，且拒绝权限。
+         * 这时候，需要跳转到设置界面去，让用户手动开启。
+         */
+        if (EasyPermissions.somePermissionPermanentlyDenied(this, perms)) {
+            new AppSettingsDialog.Builder(this).build().show();
+
+        }
+
+    }
 
 }
+
 
 //import static com.bcm.havoc.wmapp.Base.DB.XDBManager.db;
 //        import static com.bcm.havoc.wmapp.Base.DB.XDBManager.initDb;

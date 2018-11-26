@@ -8,11 +8,11 @@ import android.content.Intent;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.net.Uri;
-import android.os.Build;
 import android.os.Environment;
-import android.support.v4.content.FileProvider;
 import android.support.v7.app.AlertDialog;
 
+import com.bcm.havoc.mylibrary.Application.URLConfig;
+import com.bcm.havoc.mylibrary.Entity.AndroidVersion;
 import com.bcm.havoc.mylibrary.Utils.logger.Logger;
 
 import org.xutils.common.Callback;
@@ -32,18 +32,20 @@ public class checkUpdateUtils {
     private static String userAccount="",nowVersion="",passWord="";
     private static ProgressDialog progressDialog,pDialog;
     private static Context contexts;
-
+    private static PackageInfo packageInfo;
+    private static String apkName;
     /**
      * 下载更新,
      */
     //http://172.16.10.242:8080/MVNFHM/appInterface/isUpdate?userAccount=11000&appVersion=0
-    public static void checkUpdate(Context context) {
+    public static void checkUpdate(Context context,String apkname) {
         // TODO Auto-generated method stub
         contexts=context;
+        apkName=apkname;
 //        sharedPrefs = context.getSharedPreferences("RZ3Share", Context.MODE_PRIVATE);
 //        userAccount=sharedPrefs.getString("USER_ACCOUNT", "110");
         try {
-            PackageInfo packageInfo = context.getPackageManager().getPackageInfo(
+             packageInfo = context.getPackageManager().getPackageInfo(
                     context.getPackageName(), 0);
             nowVersion = packageInfo.versionName;
         } catch (PackageManager.NameNotFoundException e) {
@@ -51,29 +53,27 @@ public class checkUpdateUtils {
             e.printStackTrace();
         }
         proDialogShow(context, "正在查询...");
-//        RequestParams params = new RequestParams(URLConfig.CheckVersion);
-        RequestParams params = new RequestParams();
+        RequestParams params = new RequestParams(URLConfig.CheckVersion);
 
 //        params.addBodyParameter("userAccount", userAccount);
 //        params.addBodyParameter("appVersion", nowVersion);
     Logger.i("Checkparams="+params);
-//        x.http().post(params, new Callback.CommonCallback<String>() {
    x.http().post(params, new Callback.CommonCallback<String>() {
        @Override
        public void onSuccess(String result) {
-//           Logger.i(result);
-//           // TODO Auto-generated method stub
-//           PDialogHide();
-////           SectionEntity.ServiceEntity<AndroidVersion> Entity = JsonUtils.getServiceEntity(result, AndroidVersion.class);
-//
-//           if (nowVersion.compareTo(Entity.getData().getVersion())>=0) {
-////                    Toast.makeText(contexts,"当前版本为最新版本", Toast.LENGTH_SHORT).show();
-//               Logger.i("当前版本为最新，不用更新"+Entity.getData().getVersion());
-//           } else {
-//               //
-//               Logger.i("当前版本为不同，当前版本号为"+nowVersion+"最新版本号为"+Entity.getData().getVersion());
-//               setUpDialog(Entity.getData().getVersion(), Entity.getData().getApkUrl(), "最新版");
-//           }
+           Logger.i(result);
+           // TODO Auto-generated method stub
+           PDialogHide();
+           AndroidVersion Entity = JsonUtils.getPerson(result, AndroidVersion.class);
+
+           if (nowVersion.compareTo(Entity.getVersion())>=0) {
+//                    Toast.makeText(contexts,"当前版本为最新版本", Toast.LENGTH_SHORT).show();
+               Logger.i("当前版本为最新，不用更新"+Entity.getVersion());
+           } else {
+               //
+               Logger.i("当前版本为不同，当前版本号为"+nowVersion+"最新版本号为"+Entity.getVersion());
+               setUpDialog(Entity.getVersion(), Entity.getApkUrl(), "最新版");
+           }
        }
             @Override
             public void onCancelled(CancelledException arg0) {
@@ -139,7 +139,7 @@ public class checkUpdateUtils {
         params.setAutoRename(true);//断点下载
 
 //        params.setSaveFilePath("/mnt/sdcard/rzxt.apk");
-        params.setSaveFilePath(Environment.getExternalStorageDirectory().getAbsolutePath() + File.separator +"intern3/intern3.apk");
+        params.setSaveFilePath(Environment.getExternalStorageDirectory().getAbsolutePath() + File.separator +apkName+"/"+apkName+".apk");
         x.http().get(params, new Callback.ProgressCallback<File>() {
 
             @Override
@@ -200,23 +200,23 @@ public class checkUpdateUtils {
     }
 
     private static void installtionAPK() {
-        String fileName = Environment.getExternalStorageDirectory().getAbsolutePath() + File.separator +"intern3/intern3.apk";//承接我的代码，filename指获取到了我的文件相应路径
+        String fileName = Environment.getExternalStorageDirectory().getAbsolutePath() + File.separator +apkName+"/"+apkName+".apk";//承接我的代码，filename指获取到了我的文件相应路径
         if (fileName != null) {
             if (fileName.endsWith(".apk")) {
-                if(Build.VERSION.SDK_INT>=24) {//判读版本是否在7.0以上
-                    File file= new File(fileName);
-                    Uri apkUri = FileProvider.getUriForFile(contexts, "com.example.win.newintern3.fileprovider", file);//在AndroidManifest中的android:authorities值
-                    Intent install = new Intent(Intent.ACTION_VIEW);
-                    install.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                    install.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);//添加这一句表示对目标应用临时授权该Uri所代表的文件
-                    install.setDataAndType(apkUri, "application/vnd.android.package-archive");
-                    contexts.startActivity(install);
-                } else{
+//                if(Build.VERSION.SDK_INT>=24) {//判读版本是否在7.0以上
+//                    File file= new File(fileName);
+//                    Uri apkUri = FileProvider.getUriForFile(contexts, packageInfo.packageName+".fileprovider", file);//在AndroidManifest中的android:authorities值
+//                    Intent install = new Intent(Intent.ACTION_VIEW);
+//                    install.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+//                    install.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);//添加这一句表示对目标应用临时授权该Uri所代表的文件
+//                    install.setDataAndType(apkUri, "application/vnd.android.package-archive");
+//                    contexts.startActivity(install);
+//                } else{
                     Intent install = new Intent(Intent.ACTION_VIEW);
                     install.setDataAndType(Uri.fromFile(new File(fileName)), "application/vnd.android.package-archive");
                     install.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                     contexts.startActivity(install);
-                }
+//                }
             }
         }
 

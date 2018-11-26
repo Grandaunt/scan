@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-
+    <color name="colorPrimary">#1e4d73</color>
+    <color name="colorPrimaryDark">#153b59</color>
+    <color name="colorAccent">#62B3F4</color>
+    <color name="jh_blue">#008dff</color>
     <color name="rsbColorSeekBarDefault">#c3c3c3</color>
     <color name="rsbColorThumbPressed">#FFE7E7E7</color>
     <color name="rsbColorThumbDefault">#FFFFFF</color>

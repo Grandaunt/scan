@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#FFD700</color>
-    <color name="colorPrimaryDark">#f4c600</color>
-    <color name="colorAccent">#c0ffff00</color>
+    <color name="colorPrimary">#40afff</color>
+    <color name="colorPrimaryDark">#057BFF</color>
+    <color name="colorAccent">#1C91EC</color>
     <color name="bg_green">#43d95d</color>
-
+    <color name="jh_blue">#008dff</color>
     <color name="et_hint">#888888</color>
     <color name="bg_sport">#00BFFF</color>
     <color name="select">#057BFF</color>

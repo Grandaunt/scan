@@ -87,7 +87,7 @@ dependencies {
 //    /*状态栏处理*/
     implementation 'com.githang:status-bar-compat:latest.integration'
 //    //权限管理
-    implementation 'com.tbruyelle.rxpermissions:rxpermissions:0.9.0@aar'
+//    implementation 'com.tbruyelle.rxpermissions:rxpermissions:0.9.0@aar'
 //    //相册
 //    implementation 'com.github.lovetuzitong:MultiImageSelector:1.2'
 //

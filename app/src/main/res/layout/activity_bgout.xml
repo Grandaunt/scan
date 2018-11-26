@@ -13,7 +13,7 @@
         app:qrcv_barcodeRectHeight="140dp"
         app:qrcv_borderColor="@android:color/white"
         app:qrcv_borderSize="1dp"
-        app:qrcv_cornerColor="@color/colorPrimaryDark"
+        app:qrcv_cornerColor="@color/jh_blue"
         app:qrcv_cornerLength="20dp"
         app:qrcv_cornerSize="3dp"
         app:qrcv_customGridScanLineDrawable="@mipmap/custom_grid_scan_line"
@@ -29,7 +29,7 @@
         app:qrcv_maskColor="#33FFFFFF"
         app:qrcv_qrCodeTipText="将二维码/条码放入框内，即可自动扫描"
         app:qrcv_rectWidth="300dp"
-        app:qrcv_scanLineColor="@color/colorPrimaryDark"
+        app:qrcv_scanLineColor="@color/jh_blue"
         app:qrcv_tipTextMargin="-40dp"
         app:qrcv_toolbarHeight="56dp"
         app:qrcv_topOffset="-20dp"
@@ -50,25 +50,25 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:background="@color/gray4"
+            android:background="@color/jh_blue"
             android:orientation="horizontal">
 
-            <Button
-                android:id="@+id/btn_one"
-                android:layout_weight="0.33"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:background="@null"
-                android:textColor="@color/white"
-                android:text="下行"
-                />
-            <View android:layout_height="match_parent"
-                android:layout_width="1dp"
-                android:background="@color/white"
-                android:layout_margin="10dp"/>
+            <!--<Button-->
+                <!--android:id="@+id/btn_one"-->
+                <!--android:layout_weight="0.33"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="match_parent"-->
+                <!--android:background="@null"-->
+                <!--android:textColor="@color/white"-->
+                <!--android:text="下行"-->
+                <!--/>-->
+            <!--<View android:layout_height="match_parent"-->
+                <!--android:layout_width="1dp"-->
+                <!--android:background="@color/white"-->
+                <!--android:layout_margin="10dp"/>-->
             <Button
                 android:id="@+id/btn_two"
-                android:layout_weight="0.33"
+                android:layout_weight="0.5"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:background="@null"
@@ -81,7 +81,7 @@
                 android:layout_margin="10dp"/>
             <Button
                 android:id="@+id/btn_three"
-                android:layout_weight="0.34"
+                android:layout_weight="0.5"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:background="@null"

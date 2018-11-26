@@ -61,7 +61,9 @@ public class JsonUtils {
 
             JsonObject jsonObjects = new Gson().fromJson(jsonString, JsonObject.class);
             String status = jsonObjects.get("Status").getAsString();
+            listEntity.setStatus(status);
             String msg = jsonObjects.get("Msg").getAsString();
+            listEntity.setMsg(msg);
             jsonObjects.get("Data").getAsJsonArray();
 
             List<T> arrayList = new ArrayList<T>();
@@ -70,8 +72,8 @@ public class JsonUtils {
                 arrayList.add(new Gson().fromJson(jsonObject, cls));
             }
             listEntity.setData(arrayList);
-            listEntity.setMsg(msg);
-            listEntity.setStatus(status);
+
+
         } catch (Exception e) {
             Log.e("json_error:",e.toString());
         }
@@ -86,11 +88,11 @@ public class JsonUtils {
 
             JsonObject jsonObjects = new Gson().fromJson(jsonString, JsonObject.class);
             String status = jsonObjects.get("Status").getAsString();
+            entity.setStatus(status);
             String msg = jsonObjects.get("Msg").getAsString();
+            entity.setMsg(msg);
             T data = new Gson().fromJson(jsonObjects.get("Data").getAsJsonObject(), cls);
 
-            entity.setStatus(status);
-            entity.setMsg(msg);
             entity.setData(data);
         } catch (Exception e) {
             Log.e("json_error:",e.toString());

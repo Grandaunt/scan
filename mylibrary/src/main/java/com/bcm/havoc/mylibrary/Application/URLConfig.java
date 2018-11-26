@@ -24,7 +24,7 @@ public class URLConfig {
     //所有数据
     public static final String GetAllList = URL+ "send/GetAllList";
     //    http://182.92.173.223:8080/mainStudentWeb/androidversion/getLatestVersion
-    public static final String CheckVersion = URL + "androidversion/getLatestVersion";
+    public static final String CheckVersion = "http://www.kzs1.cn/storage/interface/getDownLoadUrl";
     //      http://yefeng411114.6655.la/api/send/getstockinlist?userid=1&cangkuid=10&md5=573ab1b5a353b3a69197c1ef4ff07c9e
 //    public static final String URL_Stock_In =  "http://yefeng411114.6655.la/api/send/getstockinlist";
     public static final String URL_Stock_In = URL+ "send/GetStockInlist";

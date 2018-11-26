@@ -25,6 +25,7 @@ import com.bcm.havoc.mylibrary.Utils.KeyBoardUtil;
 import com.bcm.havoc.mylibrary.Utils.ToastUtil;
 import com.bcm.havoc.mylibrary.Utils.ToastUtils;
 import com.bcm.havoc.mylibrary.Utils.logger.Logger;
+import com.bcm.havoc.wmapp_20181108.AppConfig;
 import com.bcm.havoc.wmapp_20181108.Entity.OrderPack;
 import com.bcm.havoc.wmapp_20181108.Entity.pageResults;
 import com.bcm.havoc.wmapp_20181108.MyApplication;
@@ -62,8 +63,8 @@ import pub.devrel.easypermissions.EasyPermissions;
 // ***快递单号不能为null
 @ContentView(R.layout.activity_bgout)
 public class BGOutActivity extends TTSBaseActivity implements EasyPermissions.PermissionCallbacks, QRCodeView.Delegate {
-    @ViewInject(R.id.btn_one)
-    private Button btnOne;
+//    @ViewInject(R.id.btn_one)
+//    private Button btnOne;
     @ViewInject(R.id.btn_two)
     private Button btnTwo;
     @ViewInject(R.id.btn_three)
@@ -82,7 +83,7 @@ public class BGOutActivity extends TTSBaseActivity implements EasyPermissions.Pe
     private BaseQuickAdapter adapter;
     private List<OrderPack> mDataList;
     private View top;
-    private int upDown = 2;
+//    private int upDown = 2;
     // ================== 初始化参数设置开始 ==========================
     /**
      * 发布时请替换成自己申请的appId appKey 和 secretKey。注意如果需要离线合成功能,请在您申请的应用中填写包名。
@@ -207,23 +208,22 @@ public class BGOutActivity extends TTSBaseActivity implements EasyPermissions.Pe
     }
 
     //等同于@Event(value={R.id.btn_get,R.id.btn_post},type=View.OnClickListener.class)
-    @Event(value = {R.id.btn_one, R.id.btn_two, R.id.btn_three})
+    @Event(value = { R.id.btn_two, R.id.btn_three})
     private void getEvent(View view) {
         switch (view.getId()) {
-            case R.id.btn_one:
-                //上下行
-                if (upDown == 2) {
-                    upDown = 1;
-                    btnOne.setText("上行");
-
-                } else {
-                    upDown = 2;
-                    btnOne.setText("下行");
-                }
-                break;
+//            case R.id.btn_one:
+//                //上下行
+//                if (upDown == 2) {
+//                    upDown = 1;
+//                    btnOne.setText("上行");
+//
+//                } else {
+//                    upDown = 2;
+//                    btnOne.setText("下行");
+//                }
+//                break;
             case R.id.btn_two:
                 //手动输入
-
                 ManualInput();
                 break;
             case R.id.btn_three:
@@ -237,16 +237,27 @@ public class BGOutActivity extends TTSBaseActivity implements EasyPermissions.Pe
     //手动添加快递单
     private void ManualInput() {
         inputServer = new EditText(this);
+//        inputServer.setBackgroundColor(0);
         inputServer.setInputType( InputType.TYPE_CLASS_NUMBER);
-        AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setTitle("Server").setIcon(android.R.drawable.ic_dialog_info).setView(inputServer)
-                .setNegativeButton("Cancel", null);
-        builder.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this,com.bcm.havoc.mylibrary.R.style.dialog);
+//        DialogActivity
+        builder.setTitle("请输入快递单号").setView(inputServer)
+                .setNegativeButton("取消", new DialogInterface.OnClickListener(){
+
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        KeyBoardUtil.getInstance(BGOutActivity.this).hide();
+                    }
+                });
+        builder.setPositiveButton("确定", new DialogInterface.OnClickListener() {
 
             public void onClick(DialogInterface dialog, int which) {
-                inputServer.getText().toString();
-                onScanQRCodeSuccess(inputServer.getText().toString());
+                if(inputServer.getText().toString()!=null&&!inputServer.getText().toString().equals("")) {
+                    onScanQRCodeSuccess(inputServer.getText().toString());
+
+                }
 //                ToastUtil.showToast(inputServer.getText().toString());
+                KeyBoardUtil.getInstance(BGOutActivity.this).hide();
             }
         });
         builder.show();
@@ -263,7 +274,7 @@ public class BGOutActivity extends TTSBaseActivity implements EasyPermissions.Pe
 //            ToastUtils.showLongToastSafe("无订单编号");
 //            return;
 //        }
-        RequestParams params = new RequestParams("http://www.kzs1.cn/storage/interface/outStorage");
+        RequestParams params = new RequestParams(AppConfig.URL_COURIER_OUT);
 //        RequestParams params = new RequestParams("http://172.16.10.242:8080/storage/interface/outStorage");
 //        http://www.kzs1.cn/storage/interface/outStorageInfo?expressNumber=3967950525457@9640134029472@6640134029472&status=2&operator=%E5%88%98%E9%9B%85
 //        Gson gson = new Gson();
@@ -482,7 +493,7 @@ public class BGOutActivity extends TTSBaseActivity implements EasyPermissions.Pe
         // 设置在线发声音人： 0 普通女声（默认） 1 普通男声 2 特别男声 3 情感男声<度逍遥> 4 情感儿童声<度丫丫>
         params.put(SpeechSynthesizer.PARAM_SPEAKER, "1");
         // 设置合成的音量，0-9 ，默认 5
-        params.put(SpeechSynthesizer.PARAM_VOLUME, "9");
+        params.put(SpeechSynthesizer.PARAM_VOLUME, "15");
         // 设置合成的语速，0-9 ，默认 5
         params.put(SpeechSynthesizer.PARAM_SPEED, "5");
         // 设置合成的语调，0-9 ，默认 5
